@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { AppBar, Toolbar, Typography, Button, Container, Box } from '@mui/material';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <AppBar position="static" color="default">
+        <Toolbar>
+          <MusicNoteIcon sx={{ mr: 1 }} />
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Sacred
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+
+      <Container maxWidth="md" sx={{ mt: 6 }}>
+        <Box sx={{ bgcolor: 'background.paper', p: 4, borderRadius: 2 }}>
+          <Typography variant="h5" gutterBottom>
+            Welcome to Sacred — Day 1
+          </Typography>
+          <Typography variant="body1" paragraph>
+            Theme & AppBar are set. Backend health check ready at <strong>/api/ping</strong>.
+          </Typography>
+          <Typography variant="body2">
+            Next: Auth forms, DB schema and upload flow.
+          </Typography>
+        </Box>
+      </Container>
+    </div>
+  );
 }
 
-export default App
+export default App;
